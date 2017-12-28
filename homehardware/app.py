@@ -1,7 +1,9 @@
 from .clock import clock_tick, update_text
 from .connection import client
 
-client.userdata = dict(clock_text=update_text)
+
+client.user_data_set(dict(clock_text=update_text))
+
 
 def main_loop():
     clock_tick()
