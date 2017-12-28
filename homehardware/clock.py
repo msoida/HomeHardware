@@ -46,7 +46,7 @@ def clock_tick():
 
 def update_text(text, brightness):
     global clocknumbers, clockcolon, clockbrightness
-    if text is None:
+    if not text:
         clocknumbers = None
         return
     if text[2] == ':':
