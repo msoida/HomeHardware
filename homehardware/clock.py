@@ -44,7 +44,7 @@ def clock_tick():
             clock.write_digit(i, numbers[i])
 
 
-def update_text(text, brightness):
+def update_text(text, brightness=15):
     global clocknumbers, clockcolon, clockbrightness
     if not text:
         clocknumbers = None
