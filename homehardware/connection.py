@@ -1,7 +1,5 @@
 from atexit import register as atexit
-from datetime import datetime
-from io import BytesIO
-from json import dumps as json, loads as unjson
+from json import dumps as json, loads as unjson, JSONDecodeError
 
 from paho.mqtt.client import Client, connack_string, error_string
 from pytz import timezone
@@ -26,8 +24,13 @@ def on_disconnect(client, userdata, rc):
 
 
 def on_message(client, userdata, message):
-    # TODO
-    pass
+    try:
+        data = unjson(message.payload)
+    except JSONDecodeError:
+        return
+
+    if message.topic == 'test/clock':
+        userdata['clock_text'](data['text'])
 
 
 client = Client()
