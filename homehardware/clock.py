@@ -44,13 +44,14 @@ def clock_tick():
             clock.write_digit(i, numbers[i])
 
 
-def update_text(text, brightness=15):
+def update_text(text, brightness=5):
     global clocknumbers, clockcolon, clockbrightness
     if not text:
         clocknumbers = None
         return
+    text = str(text) + '    '
     if text[2] == ':':
-        clocknumbers = list(text[0], text[1], text[3], text[4])
+        clocknumbers = [text[0], text[1], text[3], text[4]]
         clockcolon = True
     else:
         clocknumbers = list(text[:4])
