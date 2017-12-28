@@ -53,6 +53,6 @@ def update_text(text, brightness=15):
         clocknumbers = list(text[0], text[1], text[3], text[4])
         clockcolon = True
     else:
-        clocknumbers - list(text[:4])
+        clocknumbers = list(text[:4])
         clockcolon = False
     clockbrightness = brightness
