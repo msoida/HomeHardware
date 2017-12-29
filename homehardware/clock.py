@@ -1,4 +1,4 @@
-import atexit
+from atexit import register as atexit
 from datetime import datetime, timedelta
 
 from pytz import utc, timezone
@@ -13,7 +13,7 @@ clockcolon = False
 clockbrightness = 0
 
 
-@atexit.register
+@atexit
 def run_at_exit():
     clock.display(False)
 
