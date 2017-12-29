@@ -8,7 +8,7 @@ def on_message(client, userdata, message):
         return
 
     if message.topic == 'test/clock':
-        userdata['clock_text'](data['text'])
+        userdata['clock_text'](data.get('text'))
 
     elif message.topic == 'test/display':
-        userdata['display_text'](data['text'])
+        userdata['display_text'](data.get('text'))
