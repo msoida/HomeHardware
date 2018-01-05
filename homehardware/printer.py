@@ -2,7 +2,7 @@ from serial import serial_for_url
 
 from thermal import ThermalPrinter
 
-from settings import printer_url
+from .settings import printer_url
 
 
 printer = ThermalPrinter('-', printer=serial_for_url(printer_url))
