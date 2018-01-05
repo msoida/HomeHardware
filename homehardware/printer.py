@@ -1,4 +1,4 @@
-from pyserial import serial_for_url
+from serial import serial_for_url
 
 from thermal import ThermalPrinter
 
