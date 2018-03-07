@@ -17,6 +17,7 @@ status_disconnected = json(dict(status='disconnected', value=0))
 
 def on_connect(client, userdata, flags, rc):
     print('MQTT connect: {}'.format(connack_string(rc)))
+    client.subscribe('notification/printer')
     client.subscribe('test/#')
     client.publish(status_topic, status_connected, retain=True)
 
@@ -28,7 +29,6 @@ def on_disconnect(client, userdata, rc):
 client = Client()
 client.will_set(status_topic, status_error, retain=True)
 client.connect_async(mqtt_server)
-# client.connect(mqtt_server)
 client.on_connect = on_connect
 client.on_disconnect = on_disconnect
 client.on_message = on_message
