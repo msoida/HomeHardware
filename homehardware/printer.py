@@ -7,6 +7,7 @@ from .settings import printer_url
 
 printer = ThermalPrinter('-', printer=serial_for_url(printer_url))
 printer.reset()
+printer.set_parameters(heating_time=120)
 
 
 def print_message(text, title=None):
