@@ -16,5 +16,5 @@ def on_message(client, userdata, message):
     # elif message.topic == 'test/leds':
     #     userdata['leds_value'](data.get('value'))
 
-    elif message.topic == 'notification/printer':
+    elif message.topic == 'notification/print':
         userdata['printer_text'](data.get('message'), data.get('title'))
