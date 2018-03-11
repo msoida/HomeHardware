@@ -1,4 +1,5 @@
 from serial import serial_for_url
+from unidecode import unidecode
 
 from thermal import ThermalPrinter
 
@@ -14,5 +15,5 @@ def print_message(text, title=None):
     if title is not None:
         printer.print_title(title.strip())
     printer.set_align('middle')
-    printer.write(text.strip())
+    printer.write(unidecode(text.strip()))
     printer.end_printing()

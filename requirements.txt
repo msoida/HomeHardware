@@ -4,3 +4,4 @@ pyserial
 python-decouple
 pytz
 requests
+unidecode
