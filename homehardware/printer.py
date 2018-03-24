@@ -13,7 +13,7 @@ printer.set_parameters(max_heating_dots=250, heating_time=250)
 
 def print_message(text, title=None):
     if title is not None:
-        printer.print_title(title.strip())
+        printer.print_title(unidecode(title.strip()))
     printer.set_align('middle')
     printer.write(unidecode(text.strip()))
     printer.end_printing()
