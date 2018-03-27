@@ -1,3 +1,5 @@
+from textwrap import fill
+
 from serial import serial_for_url
 from unidecode import unidecode
 
@@ -13,7 +15,7 @@ printer.set_parameters(max_heating_dots=250, heating_time=250)
 
 def print_message(text, title=None):
     if title is not None:
-        printer.print_title(unidecode(title.strip()))
+        printer.print_title(fill(unidecode(title.strip()), width=32))
     printer.set_align('middle')
-    printer.write(unidecode(text.strip()))
+    printer.write(fill(unidecode(text.strip()), width=30))
     printer.end_printing()
