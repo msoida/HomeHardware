@@ -10,8 +10,8 @@ def on_message(client, userdata, message):
     if message.topic == 'test/clock':
         userdata['clock_text'](data.get('text'))
 
-    elif message.topic == 'test/display':
-        userdata['display_text'](data.get('text'))
+    # elif message.topic == 'test/display':
+    #     userdata['display_text'](data.get('text'))
 
     # elif message.topic == 'test/leds':
     #     userdata['leds_value'](data.get('value'))
